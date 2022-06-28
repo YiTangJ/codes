@@ -1,0 +1,209 @@
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /home/ubuntu/.cache/torch/pytorch_transformers/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-config.json from cache at /home/ubuntu/.cache/torch/pytorch_transformers/4dad0251492946e18ac39290fcfe91b89d370fee250efe9521476438fe8ca185.7156163d5fdc189c3016baca0775ffce230789d7fa2a42ef516483e4ca884517
+Model config {
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "finetuning_task": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": true,
+  "output_hidden_states": false,
+  "pad_token_id": 0,
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "vocab_size": 30522
+}
+
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-pytorch_model.bin from cache at /home/ubuntu/.cache/torch/pytorch_transformers/aa1ef1aede4482d0dbcd4d52baad8ae300e60902e88fcb0bebdec09afd232066.36ca03ab34a1a5d5fa7bc3d03d55c4fa650fed07220e2eeebc06ce58d0e9a157
+cuda memory allocated: 439071232
+n_trainable_params: 109484547, n_nontrainable_params: 0
+> training arguments:
+>>> model_name: bert_spc
+>>> dataset: restaurant
+>>> optimizer: <class 'torch.optim.adam.Adam'>
+>>> initializer: <function xavier_uniform_ at 0x7f8051353820>
+>>> learning_rate: 2e-05
+>>> dropout: 0.1
+>>> l2reg: 0.01
+>>> num_epoch: 10
+>>> batch_size: 64
+>>> log_step: 5
+>>> embed_dim: 300
+>>> hidden_dim: 300
+>>> bert_dim: 768
+>>> pretrained_bert_name: bert-base-uncased
+>>> max_seq_len: 80
+>>> polarities_dim: 3
+>>> hops: 3
+>>> lsr: False
+>>> device: cuda
+>>> seed: None
+>>> valset_ratio: 0
+>>> local_context_focus: cdm
+>>> SRD: 3
+>>> model_class: <class 'models.bert_spc.BERT_SPC'>
+>>> dataset_file: {'train': './datasets/semeval14/Restaurants_Train.xml.seg', 'test': './datasets/semeval14/Restaurants_Test_Gold.xml.seg'}
+>>> inputs_cols: ['text_bert_indices', 'bert_segments_ids']
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+epoch: 0
+loss: 104.6145, acc: 51.5625
+loss: 99.1468, acc: 57.8125
+loss: 99.6147, acc: 58.0208
+loss: 99.9480, acc: 57.5781
+loss: 98.8517, acc: 58.4375
+loss: 98.9612, acc: 58.3854
+loss: 98.6660, acc: 58.4375
+loss: 97.7244, acc: 59.2188
+loss: 97.5401, acc: 59.1667
+loss: 97.7579, acc: 58.9375
+loss: 97.5555, acc: 59.0341
+> val_acc: 65.1786, val_f1: 26.9863
+>> saved: tyj_state_dict/bert_spc_restaurant_val_acc0.6518
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+epoch: 1
+loss: 93.6645, acc: 60.4167
+loss: 95.5461, acc: 58.5938
+loss: 95.1346, acc: 59.7356
+loss: 94.7659, acc: 59.8958
+loss: 94.1895, acc: 60.3261
+loss: 94.0387, acc: 60.2121
+loss: 93.1223, acc: 60.7481
+loss: 93.2472, acc: 60.4852
+loss: 92.9507, acc: 60.4651
+loss: 92.8393, acc: 60.3190
+loss: 92.3552, acc: 60.4658
+> val_acc: 68.4821, val_f1: 37.8000
+>> saved: tyj_state_dict/bert_spc_restaurant_val_acc0.6848
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+epoch: 2
+loss: 83.5811, acc: 64.0625
+loss: 81.4045, acc: 63.8021
+loss: 78.8818, acc: 65.3409
+loss: 76.5893, acc: 66.7969
+loss: 73.9389, acc: 68.5268
+loss: 71.0186, acc: 70.0120
+loss: 68.4828, acc: 71.2198
+loss: 67.3324, acc: 71.3542
+loss: 66.5846, acc: 71.7226
+loss: 65.7287, acc: 72.0109
+loss: 65.2373, acc: 72.5184
+loss: 64.5924, acc: 72.9911
+> val_acc: 79.4643, val_f1: 63.9143
+>> saved: tyj_state_dict/bert_spc_restaurant_val_acc0.7946
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+epoch: 3
+loss: 53.3299, acc: 78.1250
+loss: 52.1094, acc: 78.6458
+loss: 49.9023, acc: 79.6875
+loss: 49.7337, acc: 80.0164
+loss: 51.1359, acc: 79.1667
+loss: 50.7520, acc: 79.4181
+loss: 49.6106, acc: 79.9632
+loss: 49.8757, acc: 79.5673
+loss: 49.3905, acc: 79.9006
+loss: 48.8141, acc: 80.1658
+loss: 48.0022, acc: 80.4398
+> val_acc: 82.6786, val_f1: 71.6502
+>> saved: tyj_state_dict/bert_spc_restaurant_val_acc0.8268
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+epoch: 4
+loss: 36.5388, acc: 85.9375
+loss: 36.1268, acc: 86.8304
+loss: 33.2982, acc: 87.3698
+loss: 34.7970, acc: 86.3051
+loss: 37.1795, acc: 85.2983
+loss: 37.1064, acc: 85.3009
+loss: 37.4961, acc: 85.3027
+loss: 37.2309, acc: 85.2196
+loss: 37.0860, acc: 85.2679
+loss: 37.2369, acc: 85.3059
+loss: 36.9980, acc: 85.2764
+loss: 37.0776, acc: 85.1996
+> val_acc: 85.0000, val_f1: 76.9776
+>> saved: tyj_state_dict/bert_spc_restaurant_val_acc0.85
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+epoch: 5
+loss: 24.4860, acc: 90.6250
+loss: 26.4799, acc: 90.6250
+loss: 26.6623, acc: 90.7292
+loss: 25.3692, acc: 91.2500
+loss: 26.7135, acc: 90.2500
+loss: 26.1511, acc: 90.4167
+loss: 26.7862, acc: 90.1786
+loss: 27.0850, acc: 90.2344
+loss: 27.1244, acc: 90.3472
+loss: 27.1446, acc: 90.3438
+loss: 27.2735, acc: 90.2841
+> val_acc: 83.6607, val_f1: 74.2723
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+epoch: 6
+loss: 28.6610, acc: 86.4583
+loss: 24.2443, acc: 89.8438
+loss: 22.7119, acc: 91.2260
+loss: 22.4217, acc: 92.0139
+loss: 23.1041, acc: 91.9837
+loss: 22.8635, acc: 92.0201
+loss: 21.6514, acc: 92.3769
+loss: 21.8123, acc: 92.1053
+loss: 21.4192, acc: 92.1875
+loss: 21.4228, acc: 92.2526
+loss: 21.6260, acc: 91.9811
+> val_acc: 83.9286, val_f1: 75.0018
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+epoch: 7
+loss: 8.8078, acc: 98.4375
+loss: 16.1954, acc: 94.7917
+loss: 15.4191, acc: 94.4602
+loss: 15.3062, acc: 94.7266
+loss: 16.3384, acc: 94.1220
+loss: 16.0207, acc: 94.0505
+loss: 15.7521, acc: 94.1028
+loss: 15.8327, acc: 94.1840
+loss: 16.0347, acc: 94.1311
+loss: 16.5192, acc: 93.8859
+loss: 16.7113, acc: 93.8113
+loss: 17.0989, acc: 93.6384
+> val_acc: 83.8393, val_f1: 75.0246
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+epoch: 8
+loss: 10.1512, acc: 97.2656
+loss: 10.3941, acc: 96.7014
+loss: 10.9405, acc: 96.4286
+loss: 10.2119, acc: 96.7105
+loss: 10.6262, acc: 96.5495
+loss: 10.1367, acc: 96.4978
+loss: 10.4061, acc: 96.5993
+loss: 10.7493, acc: 96.3942
+loss: 10.8833, acc: 96.3068
+loss: 11.3986, acc: 96.0459
+loss: 12.4170, acc: 95.6308
+> val_acc: 83.5714, val_f1: 74.0542
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+epoch: 9
+loss: 4.7474, acc: 99.2188
+loss: 10.9696, acc: 96.4286
+loss: 9.1780, acc: 97.0052
+loss: 8.5337, acc: 97.0588
+loss: 10.4828, acc: 96.4489
+loss: 10.7863, acc: 96.3542
+loss: 10.7355, acc: 96.2891
+loss: 11.1854, acc: 96.0304
+loss: 12.1368, acc: 95.5729
+loss: 12.0746, acc: 95.4455
+loss: 11.7079, acc: 95.6130
+loss: 11.4503, acc: 95.7594
+> val_acc: 85.9821, val_f1: 79.6048
+>> saved: tyj_state_dict/bert_spc_restaurant_val_acc0.8598
+>> test_acc: 85.9821, test_f1: 79.6048
